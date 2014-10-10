@@ -97,4 +97,37 @@ a.forEach(function(entry) {
              return b;
          }
      });
- }*/
+ }
+
+
+
+
+
+// sort map locations by name
+map.sort(
+    function (a, b) { return (a.name>b.name ? 1 : a.name<b.name ? -1 : 0); }
+);
+ 
+// library, pub, shops
+console.log(map);
+
+
+
+
+
+
+var menu = {
+    width:  300,
+    height: 200,
+    title: "Menu"
+};
+ 
+for(var key in menu) {
+    var val = menu[key];
+    console.log("Key: "+key+" value:"+val);
+}
+
+
+
+
+*/
