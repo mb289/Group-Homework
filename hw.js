@@ -1,34 +1,43 @@
-var beer = [
-    { beername : 'Murphys Law',  Type : 'German-style Brown Ale'},
-    { beername : 'St. Arnolds', Type : 'American-style Amber'},
-    { beername : 'Corona', Type : 'light ale'},
-    { beername : 'Fosters', Type : 'dark'}
-];
-
-
-console.log(beer);
-
 // Number 1 Write your own forEach function (like we did in class). It takes the array and the function (referred to as a callback) as arguments:
 
-function largestForEach(){
-    var args = Array.prototype.slice.apply(arguments, []),
-        largest = "";
-    args.forEach(function(n){
-   		if (n.length > largest.length) {
-    		largest = n;
-    	}
-    });
-    return largest;
-}
-console.log(largestForEach("Corona","Arnolds","Bud","StellaA"));
+var beerList = [{
+    beername: 'Corona',
+    beertype: 'Ale'
+}, {
+    beername: 'Fosters',
+    beertype: 'Amber'
+}, {
+    beername: 'Guiness',
+    beertype: 'Stout'
+}, {
+    beername: 'Karbach',
+    beertype: 'IPA'
+}];
+
+beerList.forEach(function(entry) {
+    console.log(entry);
+})
 
 
 // Number 2 Write your own map, reduce, and filter functions that use your custom forEach to do their work.
 
-var brew = beer.filter(funtion(b) {
-	if(b)
+var brewski = beerList.filter(function(c) {
+        if (c.beername.length > 0) {
+            return c;
+        }
+    })
+    .map(function(c) {
+        return c.beername + " " + c.beertype;
+    })
+    .sort(sortByName);
+
+
+function sortByName(c1, c2) {
+    "use strict";
+    return c1 > c2 ? 1 : -1;
 }
 
+console.log(brewski);
 
 // Number 3 Write a function called pluck that extracts a list of property names:
 
