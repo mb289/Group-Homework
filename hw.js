@@ -29,12 +29,12 @@ var brewski = beerList.filter(function(c) {
     .map(function(c) {
         return c.beername + " " + c.beertype;
     })
-    .sort(sortByName);
+    .reduce(reduceMyBeer);
 
 
-function sortByName(c1, c2) {
+function reduceMyBeer(a, b) {
     "use strict";
-    return c1 > c2 ? 1 : -1;
+    return a + ", " + b;
 }
 
 console.log(brewski);
