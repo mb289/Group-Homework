@@ -1,7 +1,7 @@
 // Number 1 Write your own forEach function (like we did in class). It takes the array and the function (referred to as a callback) as arguments:
 
 var beerList = [{
-    beername: 'Corona',
+    beername: 'BUDWEISER', //Corona
     beertype: 'Ale'
 }, {
     beername: 'Fosters',
