@@ -40,15 +40,21 @@ function reduceMyBeer(a, b) {
 console.log(brewski);
 
 // Number 3 Write a function called pluck that extracts a list of property names:
-var stooges = [{name: 'moe', age: 40}, {name: 'larry', age: 50}, {name: 'curly', age: 60}];
-pluck(stooges, 'name');
-
-function pluck(list, propertyName) {
-    
-}
+var stooges = [
+{name: 'moe', age: 40}, 
+{name: 'larry', age: 50}, 
+{name: 'curly', age: 60}];
 
 
-// => ["moe", "larry", "curly"]
+function pluck(a) {
+    var names = a.map(function(element){
+            return element.name;
+        });
+    return names;
+    }
+console.log(pluck(stooges));
+
+// could use Underscore.js... "_.pluck(stooges, name);"  .... but that might be considered cheating? => ["moe", "larry", "curly"]
 
 
 //Number 4 Write a function called reject that returns the values in list without the elements that the truth test (predicate) passes. The opposite of filter.
