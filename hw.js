@@ -63,15 +63,20 @@ console.log(pluck(stooges));
 //Number 4 Write a function called reject that returns the values in list without the elements that the truth test (predicate) passes. The opposite of filter.
 
 var arr = [1, 2, 3, 4, 5, 6];
+var remove = [];
 
 function reject() {
-    var odd = arr.filter(function(num) {
-        return 0 != num % 2;
-    });
-}
-console.log(odd);
-//very odd little thing, but if I change the var odd to var odds I get a Reference Error...wierd.
-// could use Underscore.js... "var odds = _.reject(" ....but that might be considered cheating? || it's a prophetic hint of getting involved with angular and underscore in the near future=> [1, 3, 5]
+    var i;
+    for (i = 0; i < arr.length; i++) {
+        if (Number(arr[i]) != i % 2) { // modulo to seperate that which is not divisible by two 
+            remove.push(arr[i]); // Pushing the results from if
+            arr.splice(i, 1); // Removing the parts of arr that don't match our if
+        }
+    }
+};
+
+reject(); // Calling the function.
+console.log(remove);
 
 
 
