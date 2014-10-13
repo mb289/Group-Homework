@@ -1,5 +1,10 @@
 // Number 1 Write your own forEach function (like we did in class). It takes the array and the function (referred to as a callback) as arguments:
 // Number 2 Write your own map, reduce, and filter functions that use your custom forEach to do their work.
+// function forEach(list, callback) {
+//         for (var i = 0; len = list.length; i++) {
+//              callback(list[i], i, list);
+//              }
+// }
 // 
 var beerList = [{
     beername: 'Corona',
@@ -137,7 +142,8 @@ var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 console.log(even(arr, predicate));
 
 
-//Numbe 6 Write a function called where that looks through each value in the list, returning an array of all the values that contain all of the key-value pairs listed in properties.
+//Number 6 Write a function called where that looks through each value in the list, 
+//returning an array of all the values that contain all of the key-value pairs listed in properties.
 function where(list, properties) { 
  var listOfPlays = [{title: "Cymbeline", author: "Shakespeare", year: 1611},
                    {title: "The Tempest", author: "Shakespeare", year: 1611}];
