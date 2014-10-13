@@ -81,15 +81,46 @@ console.log(remove);
 
 
 // Number 5 Write a function called find that looks through each value in the list, returning the first one that passes a truth test (predicate), or undefined if no value passes the test. The function returns as soon as it finds an acceptable element, and doesn't traverse the entire list.
-function find(list, predicate) { /* Do stuff */ }
+var even = function(list, predicate) {
+    for (var i = 0; i < list.length; i++) {
+        if (predicate(list[i]) === true) {
+            return list[i];
+        }
+    }
+    return undefined;
+}
 
-var even = find([1, 2, 3, 4, 5, 6], function(num) {
-    return num % 2 == 0;
-});
-//=> 2
+var predicate = function(first) {
+    return first % 2 == 0;
+}
+
+var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+console.log(even(arr, predicate));
+
 
 //Numbe 6 Write a function called where that looks through each value in the list, returning an array of all the values that contain all of the key-value pairs listed in properties.
-function where(list, properties) { /* Do stuff */ }
+function where(list, properties) { 
+ var listOfPlays = [{title: "Cymbeline", author: "Shakespeare", year: 1611},
+                   {title: "The Tempest", author: "Shakespeare", year: 1611}];
+                return listOfPlays[1];
+
+                
+function where(list, properties) {
+    var author = listOfPlays.author;
+    var year = listOfPlays.year;
+    var properties = author + year;
+
+    return properties;
+};
+
+}
+                return (listOfPlays.author,listOfPlays.year);
+};
+                console.log(where(listOfPlays));
+
+
+/* Do stuff */ }
 
 where(listOfPlays, {
     author: "Shakespeare",
