@@ -58,7 +58,45 @@ function pluck(a) {
 console.log(pluck(stooges));
 
 // could use Underscore.js... "_.pluck(stooges, name);"  .... but that might be considered cheating? => ["moe", "larry", "curly"]
+/**
+ * Julie did long-hand version.... like this! just seems way too much for a simple action.
+ * 
+ * var stooges = [{
+    name: "moe",
+    age: 40
+}, {
+    name: "larry",
+    age: 50
+}, {
+    name: "curly",
+    age: 60
+}];
 
+function filter(array, test) {
+    var passed = [];
+    for (var i = 0; i < array.length; i++) {
+        if (test(array[i]))
+            passed.push(array[i]);
+    }
+    return passed;
+
+}
+
+function map(array, transform) {
+    var mapped = [];
+    for (var i = 0; i < array.length; i++)
+        mapped.push(transform(array[i]));
+    return mapped;
+}
+
+var pluck = stooges.filter(function(sto) {
+    return sto.name;
+});
+
+console.log(map(pluck, function(sto) {
+    return sto.name;
+}));
+ */
 
 //Number 4 Write a function called reject that returns the values in list without the elements that the truth test (predicate) passes. The opposite of filter.
 
