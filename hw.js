@@ -183,8 +183,19 @@ console.log(even(arr, predicate));
 //the list, returning an array of all the values that contain all of the 
 //key-value pairs listed in properties.
 //
-function where(list, properties) {
-    var listOfPlays = [{
+function forEach(list, callback) {
+    for (var i = 0, len = list.length; i < len; i++) {
+        callback(list[i], i, list);
+    }
+}    
+    function where(list, properties) {
+    var newList = [];
+    forEach(list, function(val, i, arr) {
+       newList.push(val[properties]);
+    })
+    return newList;
+}
+var listOfPlays = [{
         title: "Cymbeline",
         author: "Shakespeare",
         year: 1611
@@ -193,29 +204,9 @@ function where(list, properties) {
         author: "Shakespeare",
         year: 1611
     }];
-    return listOfPlays[1];
+    console.dir(where(listOfPlays, 'author'));
+    console.dir(where(listOfPlays, 'year'));
 
 
-    function where(list, properties) {
-        var author = listOfPlays.author;
-        var year = listOfPlays.year;
-        var properties = author + year;
-
-        return properties;
-    };
-
-}
-return (listOfPlays.author, listOfPlays.year);
-};
-console.log(where(listOfPlays));
-
-
-/* Do stuff */
-}
-
-where(listOfPlays, {
-    author: "Shakespeare",
-    year: 1611
-});
 // => [{title: "Cymbeline", author: "Shakespeare", year: 1611},
 //     {title: "The Tempest", author: "Shakespeare", year: 1611}]
